@@ -41,18 +41,19 @@ class _HomeState extends State<Home> {
                     elevation: 5.0,
                     child: Container(
                       padding: EdgeInsets.all(20),
-                      width: MediaQuery.of(context).size.width,
+                      width: MediaQuery.of(context).size.width * 0.80,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
+
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             children: [
                               Text(
-                                "Title: " + ds["Title"],
+                                ds["Title"],
                                 style: TextStyle(
                                   color: Colors.blue,
                                   fontSize: 22.0,
@@ -72,7 +73,7 @@ class _HomeState extends State<Home> {
                                 onTap: () async {
                                   await DatabaseMethods().deleteTask(ds["Id"]).then((value){
                                     Fluttertoast.showToast(
-                                        msg: "Task is added successfully",
+                                        msg: "Task is deleted successfully",
                                         toastLength: Toast.LENGTH_SHORT,
                                         gravity: ToastGravity.CENTER,
                                         timeInSecForIosWeb: 1,
@@ -88,6 +89,7 @@ class _HomeState extends State<Home> {
                             ],
                           ),
                           Text(
+                            maxLines: 3,
                             "Details: " + ds["Details"],
                             style: TextStyle(
                               color: Colors.orange,
@@ -160,6 +162,7 @@ class _HomeState extends State<Home> {
     builder:
         (context) => AlertDialog(
           content: Container(
+            height: MediaQuery.of(context).size.height * 0.50,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -182,7 +185,7 @@ class _HomeState extends State<Home> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20.0,),
+                SizedBox(height: 10.0,),
                 Text(
                   "Title",
                   style: TextStyle(
@@ -203,7 +206,7 @@ class _HomeState extends State<Home> {
                     decoration: InputDecoration(border: InputBorder.none),
                   ),
                 ),
-                SizedBox(height: 20.0),
+                SizedBox(height: 10.0),
                 Text(
                   "Details",
                   style: TextStyle(
@@ -224,7 +227,7 @@ class _HomeState extends State<Home> {
                     decoration: InputDecoration(border: InputBorder.none),
                   ),
                 ),
-                SizedBox(height: 30,),
+                SizedBox(height: 10,),
 
                 Center(
                   child: ElevatedButton(onPressed: () async{

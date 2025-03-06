@@ -100,6 +100,7 @@ class _TasksState extends State<Tasks> {
                       textColor: Colors.white,
                       fontSize: 16.0,
                     );
+                    Navigator.pop(context);
                   });
                 },
                 child: Text(
