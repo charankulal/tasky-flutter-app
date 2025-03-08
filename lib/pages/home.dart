@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
                       padding: EdgeInsets.all(20),
                       width: MediaQuery.of(context).size.width * 0.80,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.white54,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(

@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
 
 class DatabaseMethods {
   Future addTask(Map<String, dynamic> taskInfo, String id) async {
